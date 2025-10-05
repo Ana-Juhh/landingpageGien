@@ -313,7 +313,7 @@ form input, form select {
 
 .card-imagem-wrapper img {
   width: 100%;
-  height: auto;
+  height: 450px;
   display: block;
 }
 
@@ -390,8 +390,6 @@ form input, form select {
   }
 }
 
-/* FORMULARIO */
- 
 
 
 
@@ -571,16 +569,28 @@ form input, form select {
     <div class="swiper meu-carrossel">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="modelo1.jpg" alt="Imagem do Carrossel 1">
+          <img src="c1.png" alt="Imagem do Carrossel 1">
         </div>
         <div class="swiper-slide">
-          <img src="modelo2.jpeg" alt="Imagem do Carrossel 2">
+          <img src="c2.png" alt="Imagem do Carrossel 2">
         </div>
         <div class="swiper-slide">
-          <img src="modelo1.jpg" alt="Imagem do Carrossel 3">
+          <img src="c3.png" alt="Imagem do Carrossel 3">
         </div>
         <div class="swiper-slide">
-          <img src="modelo2.jpeg" alt="Imagem do Carrossel 4">
+          <img src="c4.png" alt="Imagem do Carrossel 4">
+        </div>
+        <div class="swiper-slide">
+          <img src="c5.png" alt="Imagem do Carrossel 5">
+        </div>
+        <div class="swiper-slide">
+          <img src="c6.png" alt="Imagem do Carrossel 6">
+        </div>
+        <div class="swiper-slide">
+          <img src="c7.png" alt="Imagem do Carrossel 7">
+        </div>
+        <div class="swiper-slide">
+          <img src="c8.png" alt="Imagem do Carrossel 8">
         </div>
       </div>
     </div>
@@ -596,14 +606,20 @@ form input, form select {
 
     <article class="produto-card">
       <div class="card-imagem-wrapper">
-        <img src="cardproduto.jpg" alt="Astro Santa Marina">
+        <img src="cardproduto.png" alt="Astro Santa Marina">
         <span class="tag-lancamento">Lançamento</span>
       </div>
       <div class="card-conteudo">
-        <h3>Astro Santa Marina</h3>
-        <p class="card-localizacao">Lapa • Zona Oeste • São Paulo</p>
+        <h3>Astro THE ONE</h3>
+        <p class="card-localizacao">Chacara Santo Antonio</p>
         <p class="card-descricao">
-          1 e 2 dorms. com opção de terraço. Lazer completo. Em frente a futura estação Santa Marina. Aproveite condições de lançamento!
+          2 DORMS - 32,16M²<br>
+          2 DORMS COM TERRAÇO - 37,47M² <br>
+          2 DORMS COM TERRAÇO - 41,25M²<br>
+          Área do terreno: 3.471,10M²<br>
+          Número de apartamento por andar:<br>
+          TORRE A - 14 apartamentos<br>
+          TORRE B - 12 apartamentos
         </p>
         <p class="card-endereco">
           <strong>Endereço:</strong> Rua Adriano José Marchini, S/N
@@ -619,14 +635,20 @@ form input, form select {
 
     <article class="produto-card">
       <div class="card-imagem-wrapper">
-        <img src="cardproduto.jpg" alt="Astro Santa Marina">
+        <img src="cardproduto.png" alt="Astro Santa Marina">
         <span class="tag-lancamento">Lançamento</span>
       </div>
       <div class="card-conteudo">
-        <h3>Astro Santa Marina</h3>
-        <p class="card-localizacao">Lapa • Zona Oeste • São Paulo</p>
+        <h3>Astro THE ONE</h3>
+        <p class="card-localizacao">Chacara Santo Antonio</p>
         <p class="card-descricao">
-          1 e 2 dorms. com opção de terraço. Lazer completo. Em frente a futura estação Santa Marina. Aproveite condições de lançamento!
+          2 DORMS - 32,16M²<br>
+          2 DORMS COM TERRAÇO - 37,47M² <br>
+          2 DORMS COM TERRAÇO - 41,25M²<br>
+          Área do terreno: 3.471,10M²<br>
+          Número de apartamento por andar:<br>
+          TORRE A - 14 apartamentos<br>
+          TORRE B - 12 apartamentos
         </p>
         <p class="card-endereco">
           <strong>Endereço:</strong> Rua Adriano José Marchini, S/N
@@ -642,9 +664,6 @@ form input, form select {
     
   </div>
 </section>
-
-  <!-- FORMULÁRIO DE CONTATO -->
- 
 
   <!-- FOOTER -->
 
@@ -686,7 +705,7 @@ form input, form select {
     window.open(url, "_blank");
 
     // -------- Enviar para Google Sheets + Email --------
-    fetch("SUA_WEBAPP_URL", {
+    fetch("https://script.google.com/macros/s/AKfycbzgyESW1T7mtEl09l1yI05ppSeW1t16kGJx48IcfUm_aNti-Xd8yc8670lN_E3Z8fnl/exec", {
       method: "POST",
       body: new FormData(form)
     }).then(res => alert("Cadastro enviado com sucesso!"));
