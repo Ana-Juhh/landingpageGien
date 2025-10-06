@@ -292,130 +292,76 @@ form input, form select {
 
 /* --- SEÇÃO PRODUTOS EM DESTAQUE --- */
 
-/* Estilo geral da seção */
-.produtos-destaque {
-  font-family: Arial, sans-serif;
-  padding: 50px 20px;
-  background-color: #f8f9fa; /* Um fundo cinza claro para destacar os cards */
-}
+.produtos-destaque { font-family: Arial, sans-serif; padding: 50px 20px; background-color: #f8f9fa; }
+.produtos-destaque h2 { text-align:center; margin-bottom:32px; color:#333; font-weight:700; font-size:14px; letter-spacing:1px; }
 
-/* Título principal */
-.produtos-destaque h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #333;
-  font-weight: bold;
-}
-
-/* Container que alinha os cards */
+/* grid responsivo */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de tamanho igual */
-  gap: 30px; /* Espaçamento entre os cards */
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+  gap: 24px;
   max-width: 1200px;
-  margin: 0 auto; /* Centraliza o container na página */
+  margin: 0 auto;
 }
 
-/* Card individual */
+/* card */
 .produto-card {
   background-color: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden; /* Garante que a imagem não vaze das bordas arredondadas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  overflow: hidden;
   display: flex;
-  flex-direction: column; /* Organiza o card em uma coluna flexível */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease;
+  cursor: pointer; /* indica que é clicável */
 }
+.produto-card:hover { transform: translateY(-6px); box-shadow: 0 10px 26px rgba(0,0,0,0.12); }
 
-.produto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-/* Container da imagem (para posicionar a tag) */
-.card-imagem-wrapper {
-  position: relative;
-}
-
+/* imagem */
+.card-imagem-wrapper { position: relative; }
 .card-imagem-wrapper img {
-  width: 100%;
-  height: 450px;
-  display: block;
+  width:100%;
+  height:300px;            /* ajuste a altura como preferir (250~300 é comum) */
+  object-fit:cover;
+  display:block;
 }
 
-/* Tag "Lançamento" */
+/* tag */
 .tag-lancamento {
   position: absolute;
-  bottom: 12px;
+  top: 12px;
   left: 12px;
-  background-color: #e0f2fe; /* Azul claro */
-  color: #0c54a8; /* Azul escuro */
-  padding: 5px 12px;
+  background: #e0f2fe;
+  color: #0c54a8;
+  padding: 6px 10px;
   border-radius: 6px;
-  font-size: 0.8em;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight:700;
 }
 
-/* Conteúdo de texto do card */
-.card-conteudo {
-  padding: 25px;
-  flex-grow: 1; /* Faz esta área crescer, empurrando o botão para baixo */
-}
+/* conteúdo */
+.card-conteudo { padding: 18px; flex-grow:1; }
+.card-conteudo h3 { margin:0 0 8px 0; color:#111; font-size:1.05rem; }
+.card-localizacao { color:#667; font-size:0.9rem; margin-bottom:12px; }
+.card-descricao { color:#555; font-size:0.92rem; line-height:1.5; }
 
-.card-conteudo h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.4em;
-  color: #222;
-}
-
-.card-localizacao {
-  color: #667;
-  font-size: 0.9em;
-  margin-bottom: 15px;
-}
-
-.card-descricao,
-.card-endereco {
-  color: #555;
-  font-size: 0.95em;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-/* Container do botão (para alinhamento) */
-.card-botao-wrapper {
-  padding: 0 25px 25px 25px; /* Espaçamento na parte de baixo do card */
-}
-
-/* Botão do WhatsApp */
+/* botão whatsapp */
+.card-botao-wrapper { padding: 16px 18px 22px; text-align:center; }
 .btn-whatsapp {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Espaço entre o ícone e o texto */
-  background-color: #25D366;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 14px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 1em;
-  text-align: center;
-  transition: background-color 0.3s ease;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  background:#25D366; color:#fff; text-decoration:none; padding:12px 18px; border-radius:8px;
+  font-weight:700; transition:background .18s;
 }
+.btn-whatsapp:hover { background:#1EBE57; }
 
-.btn-whatsapp:hover {
-  background-color: #1EBE57;
+/* responsividade */
+@media (max-width: 1000px) {
+  .cards-container { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* Responsividade para telas menores (celulares) */
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: 1fr; /* Muda para uma única coluna */
-  }
+@media (max-width: 600px) {
+  .cards-container { grid-template-columns: 1fr; }
+  .card-imagem-wrapper img { height:200px; }
 }
-
 
 
 /* --- FOOTER --- */
