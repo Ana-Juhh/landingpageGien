@@ -440,28 +440,22 @@
     }).then(res => alert("Cadastro enviado com sucesso!"));
   });
 
-   // -------- Carrosel de imagens --------
-  // Inicializa o Swiper
-  const swiper = new Swiper('.meu-carrossel', {
-    // Efeito do carrossel (pode ser 'slide', 'fade', 'cube', etc.)
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true // Melhora a transição do fade
-    },
+   // -------- Carrossel de imagens --------
+const swiper = new Swiper('.meu-carrossel', {
+  effect: 'fade',
+  fadeEffect: { crossFade: true },
+  autoplay: { delay: 3000, disableOnInteraction: false },
+  loop: true,
+  pagination: { el: '.swiper-pagination', clickable: true },
 
-    // Ativa a passagem automática
-    autoplay: {
-      delay: 3000, // Tempo em milissegundos (3 segundos)
-      disableOnInteraction: false, // Não para o autoplay se o usuário interagir
-    },
+  // Ajustes responsivos
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 1 },
+    992: { slidesPerView: 1 }
+  }
+});
 
-    // Loop infinito
-    loop: true,
-
-    // Remove a necessidade de setas de navegação e paginação
-    // Se quiser bolinhas de navegação, descomente a linha abaixo
-    pagination: { el: '.swiper-pagination' }, 
-  });
 
 // -------- Abrir PDF ao clicar no card --------
 
@@ -483,7 +477,24 @@
 
   
 });
+// -------- Mensagem personalizada no WhatsApp --------
+document.querySelectorAll('.produto-card').forEach(card => {
+  const whatsappBtn = card.querySelector('.btn-whatsapp');
 
+  whatsappBtn.addEventListener('click', (event) => {
+    event.stopPropagation(); // impede o clique de abrir o PDF
+
+    const nomeProduto = card.querySelector('h3').innerText.trim();
+    const numero = '5511991430441'; // <-- seu número aqui (com DDI e DDD)
+    
+    // Monta a mensagem
+    const mensagem = `Olá! Tenho interesse no ${nomeProduto} e gostaria de mais informações.`;
+    
+    // Codifica e abre o link do WhatsApp
+    const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(link, '_blank');
+  });
+});
 </script>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
